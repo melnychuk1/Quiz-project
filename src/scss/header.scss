@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  &__link-quiz{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    font-size: 3rem;
+    font-family: "monospace";
+    padding: 20px;
+    margin: 15px;
+    z-index: 1;
+    opacity: 0.3;
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+
+  &__video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  &__color-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(196, 241, 255, 0.35);
+    width: 100%;
+    height: 100vh;
+    opacity: 0.5;
+  }
+}
