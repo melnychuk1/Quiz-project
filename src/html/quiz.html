@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+             <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+             <meta http-equiv="X-UA-Compatible" content="ie=edge">
+             <title>Document</title>
+</head>
+<body>
+    <main class='container' id="container">
+
+	<section class='start' id="start">
+        <p class="start__text">FrontEnd Quiz!</p>
+    </section>
+    <section id="quiz" class="container__quiz">
+
+        <div class='timer' id="timer">
+            <div class='timer__counter' id="counter"></div>
+            <div class='timer__bar' id="btimeGauge"></div>
+            <div class='timer__bar-progress' id="timeGauge"></div>
+        </div>
+
+        <div class='progress' id="progress"></div>
+        <div class="question-card">
+            <div class="question-card__left">
+                <div class='quiz-img' id="qImg"></div>
+            </div>
+	        <div class="question-card__right ">
+
+	            <div class='title' id="question"></div>
+	            <div class='title-code' id="question-code"></div>
+
+
+	            <ol class='choices' id="choices">
+	                <li class="choices__item">
+	                    <span class="choices__item-text" id="A"></span>
+	                </li>
+	                <li class="choices__item">
+	                    <span class="choices__item-text" id="B"></span>
+	                </li>
+	                <li class="choices__item">
+	                    <span class="choices__item-text" id="C"></span>
+	                </li>
+	                <li class="choices__item">
+	                    <span class="choices__item-text" id="D"></span>
+	                </li>
+	            </ol>
+	        </div>
+        </div>
+    </section>
+    <div class='score' id="scoreContainer"></div>
+  </main>
+</body>
+</html>

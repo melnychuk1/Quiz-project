@@ -1,3 +1,189 @@
-.main-content{
+@import url('https://fonts.googleapis.com/css?family=PT+Sans:400,700|Poppins:300,400,500,700&display=swap&subset=cyrillic');
+
+//Color variables
+$primary-color: #3d2289;
+$black: #000;
+$white: #fff;
+$green: #20b2aa;
+$gray: #d3d3d3;
+$grayF2: #F2F2F2;
+$yellow: #ffde00;
+
+//Helpers
+%h-transition-25{
+  transition: all .25s ease-out;
+}
+
+//Global
+html {
+  font-size: 100%;
+}
+
+body{
+  font-size: 16px;
+  font-family: 'PT Sans', sans-serif;
+  counter-reset: progress-counter;
+}
+
+.container{
+  margin : 50px auto;
+  width : 768px;
+  position: relative;
+
+  &__quiz{
+    display: none;
+  }
+}
+
+//Start
+.start{
+  font-size: 1.6rem;
+  font-weight: bolder;
+  padding: 8px;
+  word-break: break-all;
+  border: 2px solid $gray;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  left:300px;
+  top:50px;
+  color: $gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover{
+    border-color: $green;
+    color : $green;
+  }
+}
+
+//Quiz img
+.quiz-img {
+  width : 100px;
+  height : 100px;
+
+  img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//Question card
+.question-card{
+  display: flex;
+
+  &__left{
+    margin-right: 20px;
+  }
+}
+
+//Title
+.title{
+  p{
+    margin: 0;
+    font-size: 1.8rem;
+  }
+}
+
+.title-code{
+  font-size: 14px;
+}
+
+//Choices
+.choices{
+  padding-left: 20px;
+  list-style-type: upper-alpha;
+
+  &__item{
+    margin-bottom: 5px;
+  }
+
+  &__item-text{
+    @extend %h-transition-25;
+    cursor: pointer;
+
+    &:hover{
+      color: $yellow;
+    }
+  }
+}
+
+//Timer
+.timer{
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+
+  &__counter{
+    font-size: 2rem;
+  }
+
+  &__bar{
+    width : 100%;
+    height : 30px;
+    background-color: $grayF2;
+  }
+
+  &__bar-progress{
+    height : 30px;
+    background-color: $yellow;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+//Progress
+.progress{
+  display: flex;
+  padding: 10px 0;
+
+  &__item{
+    @extend %h-transition-25;
+    width : 20px;
+    height : 20px;
+    background: $yellow;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 18px;
+
+    &:before{
+      @extend %h-transition-25;
+      font-size: 0.9rem;
+      font-weight: bold;
+      counter-increment: progress-counter;
+      content: counter(progress-counter);
+      color: $primary-color;
+    }
+
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}
+
+//Score
+.score{
+  background-color: fade-out($black, .2);
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  p {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+    color: $white;
+  }
 }

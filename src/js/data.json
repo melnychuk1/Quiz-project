@@ -1,0 +1,102 @@
+[
+  {
+    "question": "Что выведет на консоль следующий код?",
+    "code": "var colors = [\"red \",\"blue \",\"green \",\"pink \"]; \ncolors.pop(); \ncolors.push(\"orange\"); \nconsole.log(colors);",
+    "imgSrc": "img/js.png",
+    "choiceA": "red blue green pink",
+    "choiceB": "red blue green",
+    "choiceC": "red blue green orange",
+    "choiceD": "red blue",
+    "correct": "C"
+  },
+  {
+    "question": "Каким будет результат?",
+    "code": "var a = new Array(5).join('5'); \na;",
+    "imgSrc": "img/js.png",
+    "choiceA": "55555",
+    "choiceB": "\"5555\"",
+    "choiceC": "undefined",
+    "choiceD": "\"55555\"",
+    "correct": "B"
+  },
+  {
+    "question": "What does HTML stand for?",
+    "code": "var s = 'myteststring'; \nconsole.log(s.split(',', 6));",
+    "imgSrc": "img/js.png",
+    "choiceA": "[\"mytest\"]",
+    "choiceB": "[\"myteststring\"]",
+    "choiceC": "[\"m,y,t,e,s,t,s,t,r,i,n,g\"]",
+    "choiceD": "[\"m,y,t,e,s,t\"]",
+    "correct": "B"
+  },
+  {
+    "question": "Что произойдет после выполнение кода:",
+    "code": "var foo = function(){ \n   return \n       { \n            a: 1, \n            b: 2, \n            c: 3 \n       } \n} ",
+    "imgSrc": "img/js.png",
+    "choiceA": "Переменной foo присвоиться функция",
+    "choiceB": "Переменной foo будет присвоин новый объект возвращаемый функцией",
+    "choiceC": "Синтаксическая ошибка SyntaxError",
+    "choiceD": "Ошибка компиляции - имена свойств должны быть в скобках",
+    "correct": "C"
+  },
+  {
+    "question": "Каким будет результат выполнения данного кода?",
+    "code": "function f(a,b,c) { } \nvar arr = [,,,]; \narr.length; \nf.length; ",
+    "imgSrc": "img/js.png",
+    "choiceA": "3 undefined",
+    "choiceB": "undefined 3",
+    "choiceC": "SyntaxError",
+    "choiceD": "3 3",
+    "correct": "D"
+  },
+  {
+    "question": "Что выведет этот код?",
+    "code": "var a = [], b = []; \nconsole.log((a == b) + ' ' + (a == !b) + ' ' + (!a == b)+ ' ' + (!a == !b));",
+    "imgSrc": "img/js.png",
+    "choiceA": "false true true true",
+    "choiceB": "false false false false",
+    "choiceC": "false true true false",
+    "choiceD": "true true true false",
+    "correct": "C"
+  },
+  {
+    "question": "Чему будет равна переменная а?",
+    "code": "var a = 5; \nvar a; ",
+    "imgSrc": "img/js.png",
+    "choiceA": "5",
+    "choiceB": "0",
+    "choiceC": "NaN",
+    "choiceD": "undefined",
+    "correct": "D"
+  },
+  {
+    "question": "Каков будет результат выполнения следующего кода?\n",
+    "code": "for (var i = 0; i < 10; i++) { \n  setTimeout(function () { \n    console.log(i); \n  }, 0); \n}",
+    "imgSrc": "img/js.png",
+    "choiceA": "SyntaxError",
+    "choiceB": "10-раз выведется число 10",
+    "choiceC": "10",
+    "choiceD": "0,1,2,3,4,5,6,7,8,9",
+    "correct": "B"
+  },
+  {
+    "question": "Что будет выведено на консоль?",
+    "code": "switch (\"a\") { \n    case \"b\": \n        console.log(\"b\"); \n        break; \n    default: \n        console.log(\"d\"); \n    case \"c\": \n        console.log(\"c\"); \n} ",
+    "imgSrc": "img/js.png",
+    "choiceA": "SyntaxError",
+    "choiceB": "d c",
+    "choiceC": "d",
+    "choiceD": "b d c",
+    "correct": "B"
+  },
+  {
+    "question": "Чему равно свойство length (в строках a, b) массива r.",
+    "code": "    \n    var r = ['a', 'l', 'p', 'h'];       \n \n    r.length = 10;      \n        //a. r.length = ?  \n     \n    delete r[0];     \n        //b. r.length = ? ",
+    "imgSrc": "img/js.png",
+    "choiceA": "a. 10\nb. 10",
+    "choiceB": "a. 4\nb. 3",
+    "choiceC": "a. 10\nb. 9",
+    "choiceD": "a. undefiend\nb. undefiend",
+    "correct": "A"
+  }
+]

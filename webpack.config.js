@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const Clean = require('clean-webpack-plugin');
 const CopyFiles = require("copy-webpack-plugin");
 
 module.exports = {
@@ -39,8 +38,12 @@ module.exports = {
     plugins: [
         new ExtractTextPlugin('style.css'),
         new HtmlWebpackPlugin({
-            template: "src/index.html",
+            template: "src/html/index.html",
             filename: 'index.html'
+        }),
+        new HtmlWebpackPlugin({
+            template: "src/html/quiz.html",
+            filename: 'quiz.html'
         }),
         new CopyFiles([
             {
