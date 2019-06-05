@@ -91,12 +91,102 @@
   },
   {
     "question": "Чему равно свойство length (в строках a, b) массива r.",
-    "code": "    \n    var r = ['a', 'l', 'p', 'h'];       \n \n    r.length = 10;      \n        //a. r.length = ?  \n     \n    delete r[0];     \n        //b. r.length = ? ",
+    "code": "    var r = ['a', 'l', 'p', 'h'];       \n \n    r.length = 10;      \n        //a. r.length = ?  \n     \n    delete r[0];     \n        //b. r.length = ? ",
     "imgSrc": "img/js.png",
     "choiceA": "a. 10\nb. 10",
     "choiceB": "a. 4\nb. 3",
     "choiceC": "a. 10\nb. 9",
     "choiceD": "a. undefiend\nb. undefiend",
     "correct": "A"
+  },
+  {
+    "question": "Что выведет этот код?",
+    "code": "for(let i=0; i<10; i++) {\n  setTimeout(function() {\n    alert(i);\n  }, 100);\n}",
+    "imgSrc": "img/js.png",
+    "choiceA": "Числа от 0 до 9.",
+    "choiceB": "Числа от 0 до 10.",
+    "choiceC": "10 раз число 0.",
+    "choiceD": "10 раз число 10.",
+    "correct": "A"
+  },
+  {
+    "question": "Чему равно это выражение?",
+    "code": "[].push(1,2).unshift(3).join()",
+    "imgSrc": "img/js.png",
+    "choiceA": "3,1",
+    "choiceB": "1,2,3",
+    "choiceC": "3,1,2",
+    "choiceD": "В коде ошибка.",
+    "correct": "D"
+  },
+  {
+    "question": "Что выведет этот код?",
+    "code": "let a = [1,2]\n\n(function() { alert(a) })()",
+    "imgSrc": "img/js.png",
+    "choiceA": "[object Array]",
+    "choiceB": "[object Object]",
+    "choiceC": "1,2",
+    "choiceD": "Будет ошибка.",
+    "correct": "D"
+  },
+  {
+    "question": "Чему будет равен this?",
+    "code": "let user = {\n  sayHi: function() {\n    alert(this);\n  }\n};\n\n(user.sayBye = user.sayHi)();",
+    "imgSrc": "img/js.png",
+    "choiceA": "null",
+    "choiceB": "undefined",
+    "choiceC": "Объекту user.",
+    "choiceD": "В коде ошибка.",
+    "correct": "B"
+  },
+  {
+    "question": "Чему равна переменная name?",
+    "code": "let name = \"пупкин\".replace(\"п\", \"д\")",
+    "imgSrc": "img/js.png",
+    "choiceA": "дудкин.",
+    "choiceB": "дупкин.",
+    "choiceC": "пупкин.",
+    "choiceD": "пудкин.",
+    "correct": "B"
+  },
+  {
+    "question": "Что выведет этот код?",
+    "code": "f.call(f);\n\nfunction f() {\n  alert( this );\n}",
+    "imgSrc": "img/js.png",
+    "choiceA": "код функции f.",
+    "choiceB": "[object Object]",
+    "choiceC": "ошибка: слишком глубокая рекурсия.",
+    "choiceD": "ошибка: переменная f не определена.",
+    "correct": "A"
+  },
+  {
+    "question": "Что выведет этот код?",
+    "code": "if (function f(){}) {\n  alert(typeof f);\n}",
+    "imgSrc": "img/js.png",
+    "choiceA": "function",
+    "choiceB": "null",
+    "choiceC": "undefined",
+    "choiceD": "object",
+    "correct": "C"
+  },
+  {
+    "question": "Чему равно такое выражение?",
+    "code": "[] + false - null + true",
+    "imgSrc": "img/js.png",
+    "choiceA": "0",
+    "choiceB": "NaN",
+    "choiceC": "undefined",
+    "choiceD": "1",
+    "correct": "B"
+  },
+  {
+    "question": "Внимательно посмотрите на синтаксис этого кода. Что он выведет?",
+    "code": "let f = function(x) {\n  alert(x)\n}\n\n(function() {\n  f(1)\n}())",
+    "imgSrc": "img/js.png",
+    "choiceA": "Никакого результата.",
+    "choiceB": "Выведет 1.",
+    "choiceC": "Выведет undefined.",
+    "choiceD": "Будет ошибка.",
+    "correct": "D"
   }
 ]

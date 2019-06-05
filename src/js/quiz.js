@@ -24,7 +24,7 @@ const questionCode = document.getElementById("question-code");
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 0;
-const questionTime = 100; // 100s
+const questionTime = 60; // 60s
 const gaugeWidth = 100; // 100%
 const gaugeUnit = gaugeWidth / questionTime;
 let TIMER;
@@ -35,9 +35,9 @@ function renderQuestion(){
     let q = questions[runningQuestion];
 
 
-    questionCode.innerHTML = `<pre class="language-javascript"><code>${q.code}</code></pre>`;
     question.innerHTML = `<p>${q.question}</p>`;
     qImg.innerHTML = `<img src="${q.imgSrc}">`;
+    questionCode.innerHTML = `<pre class="language-javascript"><code >${q.code}</code></pre>`;
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
@@ -60,7 +60,7 @@ function startQuiz(){
 // render progress
 function renderProgress(){
     for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
-        progress.innerHTML += "<div class='progress__item' id="+ qIndex +"></div>";
+        progress.innerHTML += `<div class='progress__item' id="${qIndex}"></div>`;
     }
 }
 
