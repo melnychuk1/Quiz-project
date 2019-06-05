@@ -24,7 +24,7 @@ const questionCode = document.getElementById("question-code");
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 0;
-const questionTime = 100; // 10s
+const questionTime = 100; // 100s
 const gaugeWidth = 100; // 100%
 const gaugeUnit = gaugeWidth / questionTime;
 let TIMER;
@@ -35,13 +35,13 @@ function renderQuestion(){
     let q = questions[runningQuestion];
 
 
-    questionCode.innerHTML = `<pre class="language-javascript"><code>${q.code}</code></pre>`
+    questionCode.innerHTML = `<pre class="language-javascript"><code>${q.code}</code></pre>`;
     question.innerHTML = `<p>${q.question}</p>`;
     qImg.innerHTML = `<img src="${q.imgSrc}">`;
     choiceA.innerHTML = q.choiceA;
     choiceB.innerHTML = q.choiceB;
     choiceC.innerHTML = q.choiceC;
-    choiceD.innerHTML = q.choiceD
+    choiceD.innerHTML = q.choiceD;
 
 }
 
@@ -115,6 +115,7 @@ function checkAnswer(answer){
 
 // answer is correct
 function answerIsCorrect(){
+    console.log(document.getElementById(runningQuestion));
     document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
 }
 
