@@ -87,7 +87,14 @@ function renderCounter(){
 
 // choice Answer
 choiceAnswer.addEventListener('click', (e) => {
-    checkAnswer(e.target.id);
+
+    if (e.target.id){
+        checkAnswer(e.target.id);
+    }
+    else{
+        checkAnswer(e.target.lastElementChild.id);
+    }
+
 });
 
 // check Answer
@@ -115,7 +122,6 @@ function checkAnswer(answer){
 
 // answer is correct
 function answerIsCorrect(){
-    console.log(document.getElementById(runningQuestion));
     document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
 }
 
@@ -152,6 +158,7 @@ function scoreRender() {
 
     scoreDiv.innerHTML = `<img src="${img}">`;
     scoreDiv.innerHTML += `<p>${scorePerCent}</p>`;
+    scoreDiv.innerHTML += `<a href="quiz.html" class="score__linkBack">Turn back to Quiz</a>`;
 }
 
 

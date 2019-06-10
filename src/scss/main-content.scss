@@ -5,6 +5,8 @@ $primary-color: #3d2289;
 $black: #000;
 $white: #fff;
 $green: #20b2aa;
+$true: green;
+$false: red;
 $gray: #d3d3d3;
 $grayF2: #F2F2F2;
 $yellow: #ffde00;
@@ -99,16 +101,18 @@ body{
   list-style-type: upper-alpha;
 
   &__item{
+    @extend %h-transition-25;
+    cursor: pointer;
     margin-bottom: 5px;
+
+    &:hover{
+      background: $yellow;
+      border-radius: 10px;
+    }
   }
 
   &__item-text{
-    @extend %h-transition-25;
-    cursor: pointer;
-
-    &:hover{
-      color: $yellow;
-    }
+    padding: 10px;
   }
 }
 
@@ -126,6 +130,7 @@ body{
     width : 100%;
     height : 30px;
     background-color: $grayF2;
+    border-radius: 15px;
   }
 
   &__bar-progress{
@@ -133,6 +138,7 @@ body{
     background-color: $yellow;
     position: absolute;
     bottom: 0;
+    border-radius: 15px;
   }
 }
 
@@ -211,6 +217,20 @@ body{
     font-weight: bold;
     text-align: center;
     color: $white;
+  }
+
+  &__linkBack{
+    text-decoration: none;
+    font-size: 20px;
+    color: $gray;
+    margin-top: 50px;
+    font-weight: bold;
+    border: 2px solid $gray;
+    padding: 10px;
+    &:hover{
+      border-color: $green;
+      color : $green;
+    }
   }
 }
 
