@@ -1,26 +1,16 @@
-
 import questions from './data';
-
+import template from '../template/question.hbs'
 
 // select all elements
-
 const start = document.getElementById("start");
 const quiz = document.getElementById("quiz");
-const question = document.getElementById("question");
-const qImg = document.getElementById("qImg");
-const choiceA = document.getElementById("A");
-const choiceB = document.getElementById("B");
-const choiceC = document.getElementById("C");
-const choiceD = document.getElementById("D");
 const counter = document.getElementById("counter");
 const timeGauge = document.getElementById("timeGauge");
 const progress = document.getElementById("progress");
 const scoreDiv = document.getElementById("scoreContainer");
-const choiceAnswer = document.getElementById("choices");
-const questionCode = document.getElementById("question-code");
+const questionCard = document.getElementById("question-card");
 
 // create some variables
-
 const lastQuestion = questions.length - 1;
 let runningQuestion = 0;
 let count = 0;
@@ -34,15 +24,16 @@ let score = 0;
 function renderQuestion(){
     let q = questions[runningQuestion];
 
-
-    question.innerHTML = `<p>${q.question}</p>`;
-    qImg.innerHTML = `<img src="${q.imgSrc}">`;
-    questionCode.innerHTML = `<pre class="language-javascript"><code >${q.code}</code></pre>`;
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
-    choiceD.innerHTML = q.choiceD;
-
+        questionCard.innerHTML = template({
+            question: q.question,
+            qImg: q.imgSrc,
+            questionCode: q.code,
+            choiceA: q.choiceA,
+            choiceB: q.choiceB,
+            choiceC: q.choiceC,
+            choiceD: q.choiceD
+        });
+    choiceAnsw ();
 }
 
 start.addEventListener("click", startQuiz);
@@ -86,16 +77,19 @@ function renderCounter(){
 }
 
 // choice Answer
-choiceAnswer.addEventListener('click', (e) => {
+function choiceAnsw (){
+    const choiceAnswer = document.getElementById("choices");
 
-    if (e.target.id){
-        checkAnswer(e.target.id);
-    }
-    else{
-        checkAnswer(e.target.lastElementChild.id);
-    }
+    choiceAnswer.addEventListener('click', (e) => {
 
-});
+        if (e.target.id){
+            checkAnswer(e.target.id);
+        }
+        else{
+            checkAnswer(e.target.lastElementChild.id);
+        }
+    });
+}
 
 // check Answer
 function checkAnswer(answer){

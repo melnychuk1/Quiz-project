@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyFiles = require("copy-webpack-plugin");
+const HandlebarsPlugin = require("handlebars-webpack-plugin");
 
 module.exports = {
     devtool: "source-map",
@@ -27,6 +28,11 @@ module.exports = {
                     fallback: 'style-loader',
                     use: ['css-loader', 'sass-loader']
                 })
+            },
+            {
+                test: /\.hbs$/,
+                loader: 'handlebars-loader',
+                exclude: /(node_modules)/,
             }
         ]
     },
