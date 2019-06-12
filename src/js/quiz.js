@@ -36,8 +36,6 @@ function renderQuestion(){
     choiceAnsw ();
 }
 
-start.addEventListener("click", startQuiz);
-
 // start quiz
 function startQuiz(){
     start.style.display = "none";
@@ -155,5 +153,4 @@ function scoreRender() {
     scoreDiv.innerHTML += `<a href="quiz.html" class="score__linkBack">Turn back to Quiz</a>`;
 }
 
-
-export * from './quiz';
+export default start.addEventListener("click", startQuiz);
